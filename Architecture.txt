@@ -1,0 +1,70 @@
+MODEL
+Guest class of objects with following properties :
+- guestName : NSString
+- @property (strong, nonatomic) UIImage *guestImage;
+- likes : NSArray of strings
+- dislikes : NSArray of strings
+Dish Class of objects with the following properties :
+- title : NSstring
+- recipe : NSString
+- @property (strong, nonatomic) UIImage *dishImage;
+Diner class of objects with :
+- an import of Guest.h and Dish.h
+- the following properties :
+    - name : NSString
+    - date : NSString
+    - multiple (atomic ?) Dish objects
+    - multiple (atomic ?) Guest objects. 
+    
+
+VIEW
+3 main views : dish, diner and guests. 
+- Dish : 
+    - dishList : one main view controller with a list of dishes as buttons (=> dishView) and an "add" button (=>dishAddition)
+    - dishView : one view controller with :
+        - a view with a dish's name label, recipe text view and picture view. //edit button ? (=>?)
+        - a view with a list of guests as buttons (=> guestView) who already had the dish.
+    - dishAddition : one view controller with a dish addition form with text fields and button (=>system's pic selection menu).
+
+- Guest :
+    - guestList : one main view with a list of guests (=>guestView) and a button (=>guestAddition||phone's contacts)
+    - guestView : one subview with a list's element's descriptions :
+        - a view with name and picture
+        - a list of dishes he had.
+        - a preference button (=>preferenceView)
+    - preferenceView : a subview with likes and dislikes (allergies)
+        - a view with name and picture
+        - a list of likes
+        - a list of dislikes
+        - a button (=>preference addition)
+    - preferenceAddition : one view controller with a preference addition form with text fields and validation button (=>preferenceView).
+    - guestAddition : one view controller with a guest addition form with text fields and validation button (=>guestView).
+    
+- diners :
+    - dinerList : one main view with a list of diners (dinerView and an addition button (=> dinerAddition)
+    - dinerView : one subview with a list element's descriptions : 
+        - a view with dishes (=>dishView) that were eaten at the diner.
+        - a view with guests (=>guestView) that were here at the dineR. 
+    - dinerAddition : one subview with a diner addition form :
+        - a view with "title" text field
+        - a view with a date picker
+        - a view with a guest picker : 
+            - a list of already selected guests.
+            - a + button => rolling picker with list of guests and OK button.
+
+CONTROLER
+
+GuestViewController
+
+DishViewController
+
+DinerViewController
+- viewDidLoad {
+     if database doesn't exist, create
+     else, load
+        read from database file and create guest, dish and diner objects.
+        put all objects of each type in an array so that you can then look for ObjectAtIndex ?
+ }
+- IBActions
+
+- HelperMethods
