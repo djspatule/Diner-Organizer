@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  FirstViewController.h
 //  Diner Organizer
 //
 //  Created by Lion on 10/10/14.
@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MasterViewController : UITableViewController
-
+@interface FirstViewController : UIViewController
 
 @end
 
