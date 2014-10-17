@@ -54,6 +54,8 @@ VIEW
 
 CONTROLER
 
+//to ensure MVC is implemented correctly, make sure that there is no mention of diner, dishes and guest classes in the view as well as no mention of textfields and labels in our model classes. the controller is here to create instances of the objects, add them to elemtns in the view, update the view, etc. that's why controller import the model classes as well as UIKit and the view elements.
+
 GuestViewController
 
 DishViewController
