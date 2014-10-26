@@ -2,33 +2,49 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Dishes-->
+        <!--dishList-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController title="Dishes" id="9pv-A4-QxB" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController title="Dishes" id="9pv-A4-QxB" userLabel="dishList" customClass="dishListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Zll-Vx-2ps">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="crs-s4-MRt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="crs-s4-MRt" id="xFz-m6-Iyc">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="AD7-aB-Az8" kind="show" id="Dhz-rJ-GGL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Dishes" id="miB-Nx-hqx">
-                        <barButtonItem key="rightBarButtonItem" title="+" id="1EL-oC-Qw4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1EL-oC-Qw4">
                             <connections>
-                                <segue destination="n42-F3-VaO" kind="show" identifier="addDish" id="CD5-D0-J6I"/>
+                                <segue destination="n42-F3-VaO" kind="show" id="Liq-Zy-YmG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dishListTableView" destination="Zll-Vx-2ps" id="U0m-bq-i8R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1607" y="-357"/>
         </scene>
-        <!--NewDish-->
+        <!--newDish-->
         <scene sceneID="Wd0-uj-Xhu">
             <objects>
-                <viewController title="NewDish" id="n42-F3-VaO" customClass="FirstViewController" sceneMemberID="viewController">
+                <viewController title="newDish" id="n42-F3-VaO" customClass="NewDishViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uhc-pp-IUC"/>
                         <viewControllerLayoutGuide type="bottom" id="Gda-FL-nO2"/>
@@ -37,20 +53,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPB-mi-72a">
-                                <rect key="frame" x="16" y="263" width="568" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.91764712333679199" blue="0.41176474094390869" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type the dish's name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwF-SH-XuP">
                                 <rect key="frame" x="115" y="290" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="72" width="368" height="30"/>
-                                </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zOO-Co-zDA">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -60,36 +66,117 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="zOO-Co-zDA" secondAttribute="centerX" id="cfZ-V0-yX4"/>
-                            <constraint firstAttribute="centerY" secondItem="zOO-Co-zDA" secondAttribute="centerY" id="iV3-2O-P0s"/>
+                            <constraint firstItem="zOO-Co-zDA" firstAttribute="leading" secondItem="mL9-2J-ALa" secondAttribute="leadingMargin" id="1O6-9a-8r5"/>
+                            <constraint firstItem="bwF-SH-XuP" firstAttribute="leading" secondItem="mL9-2J-ALa" secondAttribute="leadingMargin" id="7Ra-Zw-c3X"/>
+                            <constraint firstItem="bwF-SH-XuP" firstAttribute="top" secondItem="uhc-pp-IUC" secondAttribute="bottom" constant="8" id="A35-MP-cq2"/>
+                            <constraint firstItem="zOO-Co-zDA" firstAttribute="trailing" secondItem="mL9-2J-ALa" secondAttribute="trailingMargin" id="Qzt-qe-XmA"/>
+                            <constraint firstItem="bwF-SH-XuP" firstAttribute="trailing" secondItem="mL9-2J-ALa" secondAttribute="trailingMargin" id="aoN-c5-dwz"/>
+                            <constraint firstItem="zOO-Co-zDA" firstAttribute="top" secondItem="bwF-SH-XuP" secondAttribute="bottom" constant="8" id="e1x-GB-kac"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="zOO-Co-zDA"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="cfZ-V0-yX4"/>
-                                <exclude reference="iV3-2O-P0s"/>
+                                <exclude reference="7Ra-Zw-c3X"/>
+                                <exclude reference="A35-MP-cq2"/>
+                                <exclude reference="aoN-c5-dwz"/>
+                                <exclude reference="1O6-9a-8r5"/>
+                                <exclude reference="Qzt-qe-XmA"/>
+                                <exclude reference="e1x-GB-kac"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <exclude reference="oPB-mi-72a"/>
                                 <include reference="zOO-Co-zDA"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="cfZ-V0-yX4"/>
-                                <include reference="iV3-2O-P0s"/>
+                                <include reference="7Ra-Zw-c3X"/>
+                                <include reference="A35-MP-cq2"/>
+                                <include reference="aoN-c5-dwz"/>
+                                <include reference="1O6-9a-8r5"/>
+                                <include reference="Qzt-qe-XmA"/>
+                                <include reference="e1x-GB-kac"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="J1S-LZ-NFb">
-                        <barButtonItem key="rightBarButtonItem" title="Add Dish" id="jn7-Xe-DAL"/>
+                    <navigationItem key="navigationItem" title="New Dish" id="J1S-LZ-NFb">
+                        <barButtonItem key="rightBarButtonItem" title="Add Dish" id="jn7-Xe-DAL">
+                            <connections>
+                                <action selector="addDishButtonPressed:" destination="n42-F3-VaO" id="78C-ft-6C9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dishNameTextField" destination="bwF-SH-XuP" id="l8Q-O9-RB4"/>
+                        <outlet property="dishRecipeTextField" destination="zOO-Co-zDA" id="OWA-d7-Lj6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zz3-VQ-BPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2338.5" y="-355.5"/>
+            <point key="canvasLocation" x="2346" y="-345"/>
+        </scene>
+        <!--dishView-->
+        <scene sceneID="deW-yy-sR5">
+            <objects>
+                <viewController title="dishView" id="AD7-aB-Az8" customClass="dishViewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rPq-y1-z4l"/>
+                        <viewControllerLayoutGuide type="bottom" id="F2t-Qs-9gF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="10i-Mz-iqU">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dish's name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krB-Sv-bND">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="14" y="316" width="373" height="27"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYh-1d-SMj">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="351" width="368" height="30"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cct-fN-3nV">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="77" width="368" height="231"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="krB-Sv-bND"/>
+                                <exclude reference="XYh-1d-SMj"/>
+                                <exclude reference="cct-fN-3nV"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="krB-Sv-bND"/>
+                                <include reference="XYh-1d-SMj"/>
+                                <include reference="cct-fN-3nV"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="dishImageImageView" destination="cct-fN-3nV" id="N8U-63-eYx"/>
+                        <outlet property="dishNameLabel" destination="krB-Sv-bND" id="dB4-el-Ytb"/>
+                        <outlet property="recipeContentLabel" destination="XYh-1d-SMj" id="dWy-aM-teb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCw-GH-0t0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3069" y="-335.25"/>
         </scene>
         <!--Dates-->
         <scene sceneID="wg7-f3-ORb">
@@ -159,15 +246,6 @@
                     <view key="view" contentMode="scaleToFill" id="zGp-hS-3sc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eiB-gp-5Vf">
-                                <rect key="frame" x="16" y="286" width="123" height="29"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="guests" image="guest.png" id="ei7-yH-30r"/>
