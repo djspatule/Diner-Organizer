@@ -25,6 +25,8 @@
 		B6D1A4DF19FD3CC000CAA93E /* tiramisu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6D1A4DE19FD3CC000CAA93E /* tiramisu.jpg */; };
 		B6D1A4E219FD418600CAA93E /* NewDishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1A4E119FD418600CAA93E /* NewDishViewController.m */; };
 		B6D1A4E619FD473000CAA93E /* dishViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1A4E519FD473000CAA93E /* dishViewViewController.m */; };
+		B6D1A4E919FED72400CAA93E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D1A4E719FED61B00CAA93E /* CoreData.framework */; };
+		B6D1A4EE19FEE6F100CAA93E /* Diner Organizer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6D1A4EC19FEE6F100CAA93E /* Diner Organizer.xcdatamodeld */; };
 		CF3519D9DC503B0894E6D9EF /* libPods-Diner Organizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FF9EB3CD3E0ACF5ABB73A6 /* libPods-Diner Organizer.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,9 @@
 		B6D1A4E119FD418600CAA93E /* NewDishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDishViewController.m; sourceTree = "<group>"; };
 		B6D1A4E419FD473000CAA93E /* dishViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dishViewViewController.h; sourceTree = "<group>"; };
 		B6D1A4E519FD473000CAA93E /* dishViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dishViewViewController.m; sourceTree = "<group>"; };
+		B6D1A4E719FED61B00CAA93E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B6D1A4EB19FEE29100CAA93E /* Diner Organizer-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Diner Organizer-prefix.pch"; sourceTree = "<group>"; };
+		B6D1A4ED19FEE6F100CAA93E /* Diner Organizer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Diner Organizer.xcdatamodel"; sourceTree = "<group>"; };
 		FED30C01F0C571BBC97DC9B8 /* Pods-Diner Organizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diner Organizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diner Organizer/Pods-Diner Organizer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6D1A4E919FED72400CAA93E /* CoreData.framework in Frameworks */,
 				CF3519D9DC503B0894E6D9EF /* libPods-Diner Organizer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +111,7 @@
 		313385E359946793EB6E110C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B6D1A4E719FED61B00CAA93E /* CoreData.framework */,
 				16FF9EB3CD3E0ACF5ABB73A6 /* libPods-Diner Organizer.a */,
 			);
 			name = Frameworks;
@@ -113,6 +120,7 @@
 		B6340F6219E86B270081E8B2 = {
 			isa = PBXGroup;
 			children = (
+				B6D1A4EC19FEE6F100CAA93E /* Diner Organizer.xcdatamodeld */,
 				B6340F6D19E86B280081E8B2 /* Diner Organizer */,
 				B6340F8A19E86B280081E8B2 /* Diner OrganizerTests */,
 				B6340F6C19E86B280081E8B2 /* Products */,
@@ -159,6 +167,7 @@
 				B6D1A4DE19FD3CC000CAA93E /* tiramisu.jpg */,
 				B6340F6F19E86B280081E8B2 /* Info.plist */,
 				B6340F7019E86B280081E8B2 /* main.m */,
+				B6D1A4EB19FEE29100CAA93E /* Diner Organizer-prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -351,6 +360,7 @@
 				B6D1A4E619FD473000CAA93E /* dishViewViewController.m in Sources */,
 				B6D1A4DB19FD33A000CAA93E /* Dish.m in Sources */,
 				B6D1A4D819FD1DA700CAA93E /* DishListTableViewController.m in Sources */,
+				B6D1A4EE19FEE6F100CAA93E /* Diner Organizer.xcdatamodeld in Sources */,
 				B6340F7419E86B280081E8B2 /* AppDelegate.m in Sources */,
 				B6340F7119E86B280081E8B2 /* main.m in Sources */,
 			);
@@ -475,6 +485,7 @@
 			baseConfigurationReference = 45FCE24204809096289F7E4D /* Pods-Diner Organizer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "Diner Organizer/Diner Organizer-prefix.pch";
 				INFOPLIST_FILE = "Diner Organizer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,6 +497,7 @@
 			baseConfigurationReference = FED30C01F0C571BBC97DC9B8 /* Pods-Diner Organizer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "Diner Organizer/Diner Organizer-prefix.pch";
 				INFOPLIST_FILE = "Diner Organizer/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -557,6 +569,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B6D1A4EC19FEE6F100CAA93E /* Diner Organizer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B6D1A4ED19FEE6F100CAA93E /* Diner Organizer.xcdatamodel */,
+			);
+			currentVersion = B6D1A4ED19FEE6F100CAA93E /* Diner Organizer.xcdatamodel */;
+			path = "Diner Organizer.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B6340F6319E86B280081E8B2 /* Project object */;
 }

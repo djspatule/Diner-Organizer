@@ -23,6 +23,8 @@
     dish2.dishRecipe =  @"classic tiramisu from Italy";
     dish2.dishImage = [UIImage imageNamed:@"tiramisu.jpg"];
     
+    
+    
 
     /* put dishes in a mutable array */
     NSMutableArray *dishesArray = [[NSMutableArray alloc]init];

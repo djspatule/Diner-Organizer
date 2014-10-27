@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -53,7 +54,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type the dish's name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwF-SH-XuP">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type the dish's name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwF-SH-XuP">
                                 <rect key="frame" x="115" y="290" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -78,12 +79,12 @@
                                 <exclude reference="zOO-Co-zDA"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="7Ra-Zw-c3X"/>
-                                <exclude reference="A35-MP-cq2"/>
-                                <exclude reference="aoN-c5-dwz"/>
                                 <exclude reference="1O6-9a-8r5"/>
                                 <exclude reference="Qzt-qe-XmA"/>
                                 <exclude reference="e1x-GB-kac"/>
+                                <exclude reference="7Ra-Zw-c3X"/>
+                                <exclude reference="A35-MP-cq2"/>
+                                <exclude reference="aoN-c5-dwz"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -91,19 +92,20 @@
                                 <include reference="zOO-Co-zDA"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="7Ra-Zw-c3X"/>
-                                <include reference="A35-MP-cq2"/>
-                                <include reference="aoN-c5-dwz"/>
                                 <include reference="1O6-9a-8r5"/>
                                 <include reference="Qzt-qe-XmA"/>
                                 <include reference="e1x-GB-kac"/>
+                                <include reference="7Ra-Zw-c3X"/>
+                                <include reference="A35-MP-cq2"/>
+                                <include reference="aoN-c5-dwz"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="New Dish" id="J1S-LZ-NFb">
-                        <barButtonItem key="rightBarButtonItem" title="Add Dish" id="jn7-Xe-DAL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="jn7-Xe-DAL">
                             <connections>
-                                <action selector="addDishButtonPressed:" destination="n42-F3-VaO" id="78C-ft-6C9"/>
+                                <action selector="saveDish:" destination="n42-F3-VaO" id="kA6-ds-Xqq"/>
+                                <segue destination="9pv-A4-QxB" kind="show" id="rDT-gZ-vEy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -125,6 +127,7 @@
                         <viewControllerLayoutGuide type="bottom" id="F2t-Qs-9gF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="10i-Mz-iqU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dish's name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krB-Sv-bND">
@@ -132,32 +135,74 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="14" y="316" width="373" height="27"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYh-1d-SMj">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ldb-fQ-eJ9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="351" width="368" height="30"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ldb-fQ-eJ9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Ldb-fQ-eJ9"/>
+                                    </mask>
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cct-fN-3nV">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="77" width="368" height="231"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="368" id="OYv-7A-zjf"/>
+                                    <constraint firstAttribute="height" constant="231" id="YLC-Po-vJ9"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OYv-7A-zjf"/>
+                                        <exclude reference="YLC-Po-vJ9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="OYv-7A-zjf"/>
+                                        <include reference="YLC-Po-vJ9"/>
+                                    </mask>
                                 </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="krB-Sv-bND" firstAttribute="top" secondItem="cct-fN-3nV" secondAttribute="bottom" constant="8" id="9t9-Se-MOv"/>
+                            <constraint firstItem="XYh-1d-SMj" firstAttribute="leading" secondItem="cct-fN-3nV" secondAttribute="leading" id="MZO-hf-Mkl"/>
+                            <constraint firstItem="krB-Sv-bND" firstAttribute="leading" secondItem="10i-Mz-iqU" secondAttribute="leadingMargin" constant="-2" id="RQa-ne-WaN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="krB-Sv-bND" secondAttribute="trailing" constant="-3" id="Rzg-jm-Rqr"/>
+                            <constraint firstItem="cct-fN-3nV" firstAttribute="leading" secondItem="10i-Mz-iqU" secondAttribute="leadingMargin" id="VoU-2m-Gvo"/>
+                            <constraint firstItem="cct-fN-3nV" firstAttribute="trailing" secondItem="10i-Mz-iqU" secondAttribute="trailingMargin" id="bTd-Ar-Dn0"/>
+                            <constraint firstItem="XYh-1d-SMj" firstAttribute="top" secondItem="krB-Sv-bND" secondAttribute="bottom" constant="8" id="iie-xG-jXG"/>
+                            <constraint firstItem="cct-fN-3nV" firstAttribute="top" secondItem="rPq-y1-z4l" secondAttribute="bottom" constant="13" id="pdU-vU-hd7"/>
+                            <constraint firstItem="XYh-1d-SMj" firstAttribute="trailing" secondItem="cct-fN-3nV" secondAttribute="trailing" id="wlH-ua-pvg"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="krB-Sv-bND"/>
                                 <exclude reference="XYh-1d-SMj"/>
                                 <exclude reference="cct-fN-3nV"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="MZO-hf-Mkl"/>
+                                <exclude reference="iie-xG-jXG"/>
+                                <exclude reference="wlH-ua-pvg"/>
+                                <exclude reference="9t9-Se-MOv"/>
+                                <exclude reference="RQa-ne-WaN"/>
+                                <exclude reference="Rzg-jm-Rqr"/>
+                                <exclude reference="VoU-2m-Gvo"/>
+                                <exclude reference="bTd-Ar-Dn0"/>
+                                <exclude reference="pdU-vU-hd7"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -165,6 +210,17 @@
                                 <include reference="krB-Sv-bND"/>
                                 <include reference="XYh-1d-SMj"/>
                                 <include reference="cct-fN-3nV"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="MZO-hf-Mkl"/>
+                                <include reference="iie-xG-jXG"/>
+                                <include reference="wlH-ua-pvg"/>
+                                <include reference="9t9-Se-MOv"/>
+                                <include reference="RQa-ne-WaN"/>
+                                <include reference="Rzg-jm-Rqr"/>
+                                <include reference="VoU-2m-Gvo"/>
+                                <include reference="bTd-Ar-Dn0"/>
+                                <include reference="pdU-vU-hd7"/>
                             </mask>
                         </variation>
                     </view>
@@ -279,4 +335,7 @@
         <image name="dish.png" width="30" height="19"/>
         <image name="guest.png" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="rDT-gZ-vEy"/>
+    </inferredMetricsTieBreakers>
 </document>

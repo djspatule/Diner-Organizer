@@ -12,9 +12,33 @@
 
 @interface dishListTableViewController ()
 
+@property (strong) NSMutableArray *savedDishes;
+
 @end
 
 @implementation dishListTableViewController
+
+- (NSManagedObjectContext *)managedObjectContext
+{
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]) {
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    // Fetch the saveddishes from persistent data store
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Dish"];
+    self.savedDishes = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    
+    [self.tableView reloadData];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -93,6 +117,7 @@
     [self.dishes removeObjectAtIndex:indexPath.row];
     [tableView reloadData];
 }
+
 
 /*
 // Override to support conditional editing of the table view.

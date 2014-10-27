@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Diner Organizer-Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Diner Organizer-Parse.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Diner Organizer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8B772828FFCE15DD57BB2E9D</key>
+		<key>1087F8C989A1DE992498724C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF8826703E0395C8DADF171B</key>
+		<key>B16E0E08825DE2755C27EEAD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DEF6E090EDDFDEBEE92C21D8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E6A2F894C7287A67C6D739BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

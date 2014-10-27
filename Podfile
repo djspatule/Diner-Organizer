@@ -7,6 +7,8 @@ target 'Diner Organizer' do
 
 pod 'AFNetworking', '2.2.1'
 
+pod 'Parse'
+
 end
 
 target 'Diner OrganizerTests' do
