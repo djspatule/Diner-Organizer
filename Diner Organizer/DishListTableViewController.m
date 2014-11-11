@@ -16,47 +16,22 @@
 
 @implementation dishListTableViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-
+        
     // reload the table view with content of the dishes array of dish dictionnaries
-    
-    
+    NSUserDefaults *dishesDB = [NSUserDefaults standardUserDefaults];
+    self.dishes = [[dishesDB objectForKey:@"dishes"] mutableCopy];
+    NSLog(@"self.dishes contains %@", self.dishes);
 }
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    /* The class method dishes defined in the Dish class returns an NSArray. We set the property dishes equal to the return value. */
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-
-    }
-
-    
-    /* Set the delegate and data source property of our TableView equal to self. In short, the Delegate an Datasource classes now know who to send messages to. Since self is a pointer to this ViewController we allow the Delegate and Datasource classes to send information to the ViewController. */
-    self.dishListTableView.dataSource = self;
-    self.dishListTableView.delegate = self;
-
-    
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([sender isKindOfClass:[UITableViewCell class]])
-    {
-        if ([segue.destinationViewController isKindOfClass:[UIViewController class]])
-        {
-            dishViewViewController *newViewController = segue.destinationViewController;
-            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-            Dish *selectedDish = [self.dishes objectAtIndex:indexPath.row];
-            newViewController.dish = selectedDish;
-        }
-    }
-}
-
+                                 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -65,18 +40,17 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.dishes count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     static NSString *CellIdentifier =@"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
@@ -87,20 +61,21 @@
 
     }
     else {
-        Dish *dish = self.dishes[indexPath.row];
-        cell.textLabel.text = dish.dishName;
-        cell.detailTextLabel.text = dish.dishRecipe;
-        cell.imageView.image = dish.dishImage;
+        NSDictionary *dish = self.dishes[indexPath.row];
+        cell.textLabel.text = [dish objectForKey:@"dishName"];
+        cell.detailTextLabel.text = [dish objectForKey:@"dishRecipe"];
+        [self.dishListTableView reloadData];
+        //cell.imageView.image = dish.dishImage;
 
     }
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self.dishes removeObjectAtIndex:indexPath.row];
-    [tableView reloadData];
-}
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [self.dishes removeObjectAtIndex:indexPath.row];
+//    [tableView reloadData];
+//}
 
 
 /*

@@ -34,17 +34,28 @@
 }
 */
 
-- (IBAction)saveDish:(UIBarButtonItem *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
+- (IBAction)saveDish:(UIBarButtonItem *)sender
+{
+    // create an instance of the NSUserdefaults
+    NSUserDefaults *dishesDB = [NSUserDefaults standardUserDefaults];
 
-- (NSManagedObjectContext *)managedObjectContext {
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
+    // create a Dish dictionnary object and fill it with screen content
+    NSDictionary *newDish = @{@"dishName" : self.dishNameTextField.text, @"dishRecipe" : self.dishRecipeTextField.text};
+    NSLog(@"new dish just got created with following content %@ and dishes Array in dishesDB contains %lu", newDish, (unsigned long)[[dishesDB objectForKey:@"dishes"] count]);
+
+    // save dish in userDefaults dishesDB by first getting its content, and adding a dish to it.
+    NSMutableArray *newList = [[NSMutableArray alloc] init];
+    for (int i = 0; i < ((int)[[dishesDB objectForKey:@"dishes"] count]); i++)
+    {
+        [newList addObject:[[dishesDB objectForKey:@"dishes"] objectAtIndex:i]];
     }
-    return context;
+    [newList addObject:newDish];
+    NSArray *immutableNewList = [newList copy];
+    [dishesDB setObject:immutableNewList forKey:@"dishes"];
+    [dishesDB synchronize];
+    NSLog(@"the DB contains %lu elements whose last is %@", (unsigned long)[[dishesDB objectForKey:@"dishes"] count], [[dishesDB objectForKey:@"dishes"] lastObject]);
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
