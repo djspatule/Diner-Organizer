@@ -7,7 +7,6 @@
 //
 
 #import "DishListTableViewController.h"
-#import "Dish.h"
 #import "dishViewViewController.h"
 
 @interface dishListTableViewController ()
@@ -30,8 +29,10 @@
     NSUserDefaults *dishesDB = [NSUserDefaults standardUserDefaults];
     self.dishes = [[dishesDB objectForKey:@"dishes"] mutableCopy];
     NSLog(@"self.dishes contains %@", self.dishes);
+    [self.dishListTableView reloadData];
+
 }
-                                 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -64,11 +65,24 @@
         NSDictionary *dish = self.dishes[indexPath.row];
         cell.textLabel.text = [dish objectForKey:@"dishName"];
         cell.detailTextLabel.text = [dish objectForKey:@"dishRecipe"];
-        [self.dishListTableView reloadData];
         //cell.imageView.image = dish.dishImage;
 
     }
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
+
+{
+    if ([sender isKindOfClass:[UITableViewCell class]])
+    {
+        if ([segue.destinationViewController isKindOfClass:[dishViewViewController class]])
+        {
+            dishViewViewController *nextViewController = segue.destinationViewController;
+            NSIndexPath *path = [self.tableView indexPathForCell:sender];
+            nextViewController.dishIndexNumber = path.row;
+        }
+    }
 }
 
 //- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath

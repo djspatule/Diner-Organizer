@@ -7,13 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Dish.h"
 
 @interface dishViewViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *dishNameLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *recipeContentLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *dishImageImageView;
+@property (nonatomic) NSInteger dishIndexNumber;
 
-@property (strong, nonatomic) Dish *dish;
 @end

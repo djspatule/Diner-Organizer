@@ -41,9 +41,8 @@
 
     // create a Dish dictionnary object and fill it with screen content
     NSDictionary *newDish = @{@"dishName" : self.dishNameTextField.text, @"dishRecipe" : self.dishRecipeTextField.text};
-    NSLog(@"new dish just got created with following content %@ and dishes Array in dishesDB contains %lu", newDish, (unsigned long)[[dishesDB objectForKey:@"dishes"] count]);
-
-    // save dish in userDefaults dishesDB by first getting its content, and adding a dish to it.
+    
+    // save dish in userDefaults dishesDB dictionnary by first loading the DB in memory, completing it before uploading it again.
     NSMutableArray *newList = [[NSMutableArray alloc] init];
     for (int i = 0; i < ((int)[[dishesDB objectForKey:@"dishes"] count]); i++)
     {

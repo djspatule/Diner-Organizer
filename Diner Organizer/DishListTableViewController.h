@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface dishListTableViewController : UITableViewController
+@interface dishListTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSMutableArray *dishes;
 @property (strong, nonatomic) IBOutlet UITableView *dishListTableView;

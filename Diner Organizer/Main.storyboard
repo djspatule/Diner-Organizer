@@ -22,7 +22,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="AD7-aB-Az8" kind="show" id="Dhz-rJ-GGL"/>
+                                    <segue destination="AD7-aB-Az8" kind="show" identifier="dishViewSegue" id="Dhz-rJ-GGL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

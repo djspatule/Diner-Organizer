@@ -16,10 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.recipeContentLabel.text = [NSString stringWithFormat:@"Recipe/Description : %@",self.dish.dishRecipe];
-    self.dishNameLabel.text = self.dish.dishName;
-    self.dishImageImageView.image = self.dish.dishImage;
+    
+    // load dishes data into a local MutableArray called dishes
+    NSUserDefaults *dishesDB = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *dishes = [[NSMutableArray alloc] init];
+    dishes = [[dishesDB objectForKey:@"dishes"] mutableCopy];
+
+    // retrieve info corresponding to selected cell from dishes and display in corresponding labels
+    self.dishNameLabel.text = [dishes[self.dishIndexNumber] objectForKey:@"dishName"];
+    self.recipeContentLabel.text = [dishes[self.dishIndexNumber] objectForKey:@"dishRecipe"];
+    //self.dishImageImageView.image = self.dish.dishImage;
     
 }
 
