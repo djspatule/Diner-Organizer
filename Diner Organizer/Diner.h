@@ -10,9 +10,9 @@
 
 @interface Diner : NSObject
 
-@property(nonatomic, strong) NSObject* date;
-@property(nonatomic, strong) NSObject* guest;
-@property(nonatomic, strong) NSObject* dish;
+@property(nonatomic, strong) NSObject* Date;
+@property(nonatomic, strong) NSObject* Guest;
+@property(nonatomic, strong) NSObject* Dish;
 
 
 

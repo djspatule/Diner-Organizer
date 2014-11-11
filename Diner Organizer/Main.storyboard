@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -22,7 +22,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="AD7-aB-Az8" kind="show" id="Dhz-rJ-GGL"/>
+                                    <segue destination="AD7-aB-Az8" kind="show" identifier="dishViewSegue" id="Dhz-rJ-GGL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -54,13 +54,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type the dish's name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwF-SH-XuP">
-                                <rect key="frame" x="115" y="290" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zOO-Co-zDA">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zOO-Co-zDA">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type the dish's name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bwF-SH-XuP">
+                                <rect key="frame" x="115" y="290" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -105,7 +105,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="jn7-Xe-DAL">
                             <connections>
                                 <action selector="saveDish:" destination="n42-F3-VaO" id="kA6-ds-Xqq"/>
-                                <segue destination="9pv-A4-QxB" kind="show" id="rDT-gZ-vEy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -116,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zz3-VQ-BPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2346" y="-345"/>
+            <point key="canvasLocation" x="2365.5" y="-1002"/>
         </scene>
         <!--dishView-->
         <scene sceneID="deW-yy-sR5">
@@ -224,6 +223,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Details" id="TP0-Hg-hCE"/>
                     <connections>
                         <outlet property="dishImageImageView" destination="cct-fN-3nV" id="N8U-63-eYx"/>
                         <outlet property="dishNameLabel" destination="krB-Sv-bND" id="dB4-el-Ytb"/>
@@ -232,12 +232,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCw-GH-0t0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3069" y="-335.25"/>
+            <point key="canvasLocation" x="2365.5" y="-357"/>
         </scene>
         <!--Dates-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController title="Dates" id="8rJ-Kc-sve" customClass="SecondViewController" sceneMemberID="viewController">
+                <viewController title="Dates" id="8rJ-Kc-sve" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -294,7 +294,7 @@
         <!--Guests-->
         <scene sceneID="SfO-9R-4WT">
             <objects>
-                <viewController title="Guests" modalTransitionStyle="flipHorizontal" id="Jsv-bE-Q3b" customClass="ThirdViewController" sceneMemberID="viewController">
+                <viewController title="Guests" modalTransitionStyle="flipHorizontal" id="Jsv-bE-Q3b" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nky-gr-ZQu"/>
                         <viewControllerLayoutGuide type="bottom" id="Rs2-iJ-ZSI"/>
@@ -335,7 +335,4 @@
         <image name="dish.png" width="30" height="19"/>
         <image name="guest.png" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="rDT-gZ-vEy"/>
-    </inferredMetricsTieBreakers>
 </document>

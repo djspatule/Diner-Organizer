@@ -34,30 +34,27 @@
 }
 */
 
-- (IBAction)saveDish:(UIBarButtonItem *)sender {
-    NSManagedObjectContext *context = [self managedObjectContext];
-    
-    // Create a new managed object
-    NSManagedObject *newDish = [NSEntityDescription insertNewObjectForEntityForName:@"Dish" inManagedObjectContext:context];
-    [newDish setValue:self.dishNameTextField.text forKey:@"dishName"];
-    [newDish setValue:self.dishRecipeTextField.text forKey:@"dishRecipe"];
-       
-    NSError *error = nil;
-    // Save the object to persistent store
-    if (![context save:&error]) {
-        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
-    }
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+- (IBAction)saveDish:(UIBarButtonItem *)sender
+{
+    // create an instance of the NSUserdefaults
+    NSUserDefaults *dishesDB = [NSUserDefaults standardUserDefaults];
 
-- (NSManagedObjectContext *)managedObjectContext {
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
+    // create a Dish dictionnary object and fill it with screen content
+    NSDictionary *newDish = @{@"dishName" : self.dishNameTextField.text, @"dishRecipe" : self.dishRecipeTextField.text};
+    
+    // save dish in userDefaults dishesDB dictionnary by first loading the DB in memory, completing it before uploading it again.
+    NSMutableArray *newList = [[NSMutableArray alloc] init];
+    for (int i = 0; i < ((int)[[dishesDB objectForKey:@"dishes"] count]); i++)
+    {
+        [newList addObject:[[dishesDB objectForKey:@"dishes"] objectAtIndex:i]];
     }
-    return context;
+    [newList addObject:newDish];
+    NSArray *immutableNewList = [newList copy];
+    [dishesDB setObject:immutableNewList forKey:@"dishes"];
+    [dishesDB synchronize];
+    NSLog(@"the DB contains %lu elements whose last is %@", (unsigned long)[[dishesDB objectForKey:@"dishes"] count], [[dishesDB objectForKey:@"dishes"] lastObject]);
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

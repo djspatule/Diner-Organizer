@@ -9,12 +9,9 @@
 /* Begin PBXBuildFile section */
 		B6340F7119E86B280081E8B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6340F7019E86B280081E8B2 /* main.m */; };
 		B6340F7419E86B280081E8B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6340F7319E86B280081E8B2 /* AppDelegate.m */; };
-		B6340F7A19E86B280081E8B2 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6340F7919E86B280081E8B2 /* SecondViewController.m */; };
-		B6340F7D19E86B280081E8B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6340F7B19E86B280081E8B2 /* Main.storyboard */; };
 		B6340F7F19E86B280081E8B2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6340F7E19E86B280081E8B2 /* Images.xcassets */; };
 		B6340F8219E86B280081E8B2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6340F8019E86B280081E8B2 /* LaunchScreen.xib */; };
 		B6340F8E19E86B280081E8B2 /* Diner_OrganizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B6340F8D19E86B280081E8B2 /* Diner_OrganizerTests.m */; };
-		B6340F9919E86BD50081E8B2 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6340F9819E86BD50081E8B2 /* ThirdViewController.m */; };
 		B6340FD519EA9F5A0081E8B2 /* date.png in Resources */ = {isa = PBXBuildFile; fileRef = B6340FD219EA9F5A0081E8B2 /* date.png */; };
 		B6340FD619EA9F5A0081E8B2 /* dish.png in Resources */ = {isa = PBXBuildFile; fileRef = B6340FD319EA9F5A0081E8B2 /* dish.png */; };
 		B6340FD719EA9F5A0081E8B2 /* guest.png in Resources */ = {isa = PBXBuildFile; fileRef = B6340FD419EA9F5A0081E8B2 /* guest.png */; };
@@ -27,6 +24,7 @@
 		B6D1A4E619FD473000CAA93E /* dishViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1A4E519FD473000CAA93E /* dishViewViewController.m */; };
 		B6D1A4E919FED72400CAA93E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D1A4E719FED61B00CAA93E /* CoreData.framework */; };
 		B6D1A4EE19FEE6F100CAA93E /* Diner Organizer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6D1A4EC19FEE6F100CAA93E /* Diner Organizer.xcdatamodeld */; };
+		B6FBF4D11A1225E2007BB33A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6FBF4D01A1225E2007BB33A /* Main.storyboard */; };
 		CF3519D9DC503B0894E6D9EF /* libPods-Diner Organizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FF9EB3CD3E0ACF5ABB73A6 /* libPods-Diner Organizer.a */; };
 /* End PBXBuildFile section */
 
@@ -48,16 +46,11 @@
 		B6340F7019E86B280081E8B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B6340F7219E86B280081E8B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B6340F7319E86B280081E8B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B6340F7819E86B280081E8B2 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		B6340F7919E86B280081E8B2 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		B6340F7C19E86B280081E8B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B6340F7E19E86B280081E8B2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B6340F8119E86B280081E8B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B6340F8719E86B280081E8B2 /* Diner OrganizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Diner OrganizerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6340F8C19E86B280081E8B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6340F8D19E86B280081E8B2 /* Diner_OrganizerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Diner_OrganizerTests.m; sourceTree = "<group>"; };
-		B6340F9719E86BD50081E8B2 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
-		B6340F9819E86BD50081E8B2 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		B6340FD219EA9F5A0081E8B2 /* date.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = date.png; sourceTree = "<group>"; };
 		B6340FD319EA9F5A0081E8B2 /* dish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dish.png; sourceTree = "<group>"; };
 		B6340FD419EA9F5A0081E8B2 /* guest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guest.png; sourceTree = "<group>"; };
@@ -76,6 +69,7 @@
 		B6D1A4E719FED61B00CAA93E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B6D1A4EB19FEE29100CAA93E /* Diner Organizer-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Diner Organizer-prefix.pch"; sourceTree = "<group>"; };
 		B6D1A4ED19FEE6F100CAA93E /* Diner Organizer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Diner Organizer.xcdatamodel"; sourceTree = "<group>"; };
+		B6FBF4D01A1225E2007BB33A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FED30C01F0C571BBC97DC9B8 /* Pods-Diner Organizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Diner Organizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Diner Organizer/Pods-Diner Organizer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,15 +135,8 @@
 		B6340F6D19E86B280081E8B2 /* Diner Organizer */ = {
 			isa = PBXGroup;
 			children = (
-				B6340F7219E86B280081E8B2 /* AppDelegate.h */,
-				B6340F7319E86B280081E8B2 /* AppDelegate.m */,
 				B6D1A4E319FD419200CAA93E /* Dish view controllers */,
 				B6340FDF19EAD36C0081E8B2 /* Model */,
-				B6340F7819E86B280081E8B2 /* SecondViewController.h */,
-				B6340F7919E86B280081E8B2 /* SecondViewController.m */,
-				B6340F9719E86BD50081E8B2 /* ThirdViewController.h */,
-				B6340F9819E86BD50081E8B2 /* ThirdViewController.m */,
-				B6340F7B19E86B280081E8B2 /* Main.storyboard */,
 				B6340F7E19E86B280081E8B2 /* Images.xcassets */,
 				B6340F8019E86B280081E8B2 /* LaunchScreen.xib */,
 				B6340F6E19E86B280081E8B2 /* Supporting Files */,
@@ -168,6 +155,8 @@
 				B6340F6F19E86B280081E8B2 /* Info.plist */,
 				B6340F7019E86B280081E8B2 /* main.m */,
 				B6D1A4EB19FEE29100CAA93E /* Diner Organizer-prefix.pch */,
+				B6340F7219E86B280081E8B2 /* AppDelegate.h */,
+				B6340F7319E86B280081E8B2 /* AppDelegate.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -209,6 +198,7 @@
 				B6D1A4E119FD418600CAA93E /* NewDishViewController.m */,
 				B6D1A4E419FD473000CAA93E /* dishViewViewController.h */,
 				B6D1A4E519FD473000CAA93E /* dishViewViewController.m */,
+				B6FBF4D01A1225E2007BB33A /* Main.storyboard */,
 			);
 			name = "Dish view controllers";
 			sourceTree = "<group>";
@@ -297,8 +287,8 @@
 			files = (
 				B6340FD719EA9F5A0081E8B2 /* guest.png in Resources */,
 				B6D1A4DF19FD3CC000CAA93E /* tiramisu.jpg in Resources */,
-				B6340F7D19E86B280081E8B2 /* Main.storyboard in Resources */,
 				B6D1A4DD19FD3C8C00CAA93E /* pizza.jpg in Resources */,
+				B6FBF4D11A1225E2007BB33A /* Main.storyboard in Resources */,
 				B6340FD619EA9F5A0081E8B2 /* dish.png in Resources */,
 				B6340FD519EA9F5A0081E8B2 /* date.png in Resources */,
 				B6340F8219E86B280081E8B2 /* LaunchScreen.xib in Resources */,
@@ -354,8 +344,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6340FE219EAD3920081E8B2 /* Diner.m in Sources */,
-				B6340F7A19E86B280081E8B2 /* SecondViewController.m in Sources */,
-				B6340F9919E86BD50081E8B2 /* ThirdViewController.m in Sources */,
 				B6D1A4E219FD418600CAA93E /* NewDishViewController.m in Sources */,
 				B6D1A4E619FD473000CAA93E /* dishViewViewController.m in Sources */,
 				B6D1A4DB19FD33A000CAA93E /* Dish.m in Sources */,
@@ -385,14 +373,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B6340F7B19E86B280081E8B2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B6340F7C19E86B280081E8B2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B6340F8019E86B280081E8B2 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *dishNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *dishRecipeTextField;
 
-- (IBAction)addDishButtonPressed:(UIBarButtonItem *)sender;
+- (IBAction)saveDish:(UIBarButtonItem *)sender;
 
 
 @end
