@@ -1,5 +1,5 @@
 //
-//  DishList.m
+//  DishListTableViewController.m
 //  Diner Organizer
 //
 //  Created by Lion on 10/26/14.
@@ -12,42 +12,26 @@
 
 @interface dishListTableViewController ()
 
-@property (strong) NSMutableArray *savedDishes;
-
 @end
 
 @implementation dishListTableViewController
 
-- (NSManagedObjectContext *)managedObjectContext
-{
-    NSManagedObjectContext *context = nil;
-    id delegate = [[UIApplication sharedApplication] delegate];
-    if ([delegate performSelector:@selector(managedObjectContext)]) {
-        context = [delegate managedObjectContext];
-    }
-    return context;
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+
+    // reload the table view with content of the dishes array of dish dictionnaries
     
-    // Fetch the saveddishes from persistent data store
-    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Dish"];
-    self.savedDishes = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
     
-    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
+
     /* The class method dishes defined in the Dish class returns an NSArray. We set the property dishes equal to the return value. */
-    self.dishes = [Dish dishes];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+    }
 
     
     /* Set the delegate and data source property of our TableView equal to self. In short, the Delegate an Datasource classes now know who to send messages to. Since self is a pointer to this ViewController we allow the Delegate and Datasource classes to send information to the ViewController. */

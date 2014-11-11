@@ -35,20 +35,7 @@
 */
 
 - (IBAction)saveDish:(UIBarButtonItem *)sender {
-    NSManagedObjectContext *context = [self managedObjectContext];
-    
-    // Create a new managed object
-    NSManagedObject *newDish = [NSEntityDescription insertNewObjectForEntityForName:@"Dish" inManagedObjectContext:context];
-    [newDish setValue:self.dishNameTextField.text forKey:@"dishName"];
-    [newDish setValue:self.dishRecipeTextField.text forKey:@"dishRecipe"];
-       
-    NSError *error = nil;
-    // Save the object to persistent store
-    if (![context save:&error]) {
-        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
-    }
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (NSManagedObjectContext *)managedObjectContext {

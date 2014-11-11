@@ -8,15 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h> 
+#import "Diner.h"
 
-@interface Dish : NSObject
+@interface Dish : Diner
 
 @property (strong, nonatomic) NSString *dishName;
 @property (strong, nonatomic) NSString *dishRecipe;
 @property (strong, nonatomic) UIImage *dishImage;
 
 
-/* A class method named users that returns an NSArray */
+/* A class method named dishes that returns an NSArray */
 +(NSMutableArray *)dishes;
 
 
