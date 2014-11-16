@@ -25,7 +25,12 @@
     // retrieve info corresponding to selected cell from dishes and display in corresponding labels
     self.dishNameLabel.text = [dishes[self.dishIndexNumber] objectForKey:@"dishName"];
     self.recipeContentLabel.text = [dishes[self.dishIndexNumber] objectForKey:@"dishRecipe"];
-    //self.dishImageImageView.image = self.dish.dishImage;
+    NSData* imageData = [dishes[self.dishIndexNumber] objectForKey:@"dishImage"];
+    NSLog(@"the image is %.2f Mo", (float)imageData.length/1024.0f/1024.0f);
+    // convert the image "data" saved in DB into an Image as advised in http://stackoverflow.com/questions/6648518/save-images-in-nsuserdefaults
+    UIImage* image = [UIImage imageWithData:imageData];
+    // show the image in the controller's UIImageView.
+    self.dishImageImageView.image = image;
     
 }
 
