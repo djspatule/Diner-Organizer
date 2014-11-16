@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewDishViewController : UIViewController
+@interface NewDishViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *dishNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *dishRecipeTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *NewDishImageView;
+@property (strong, nonatomic) UIImage *chosenDishImage;
+@property (strong, nonatomic) UIImagePickerController * DishImagePicker;
 
 - (IBAction)saveDish:(UIBarButtonItem *)sender;
 
