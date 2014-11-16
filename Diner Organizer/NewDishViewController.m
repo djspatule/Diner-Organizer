@@ -87,4 +87,9 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)dishNameTyped:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
 @end

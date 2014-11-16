@@ -31,6 +31,7 @@
     UIImage* image = [UIImage imageWithData:imageData];
     // show the image in the controller's UIImageView.
     self.dishImageImageView.image = image;
+    self.title = [dishes[self.dishIndexNumber] objectForKey:@"dishName"];
     
 }
 
