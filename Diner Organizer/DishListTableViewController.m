@@ -62,6 +62,7 @@
 
     }
     else {
+        //create a dictionnary object with the info from the dish in DB (that was transfered in self.dishes)
         NSDictionary *dish = self.dishes[indexPath.row];
         cell.textLabel.text = [dish objectForKey:@"dishName"];
         cell.detailTextLabel.text = [dish objectForKey:@"dishRecipe"];
@@ -78,18 +79,32 @@
     {
         if ([segue.destinationViewController isKindOfClass:[dishViewViewController class]])
         {
+            //create a view controller object and make it the current segue's destination.
             dishViewViewController *nextViewController = segue.destinationViewController;
+            //create a path object in which we store the path for the UITableViewCell that started the segue.
             NSIndexPath *path = [self.tableView indexPathForCell:sender];
+            // transfer to the next view controller the path (or address) of the cell that was clicked on.
             nextViewController.dishIndexNumber = path.row;
         }
     }
 }
 
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [self.dishes removeObjectAtIndex:indexPath.row];
-//    [tableView reloadData];
-//}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    // remove the dish from the temporary copy of dishes
+    [self.dishes removeObjectAtIndex:indexPath.row];
+    
+    // update the DB
+    NSUserDefaults *dishesDB = [NSUserDefaults standardUserDefaults];
+    // put the updated version of self.dishes in an immutable array
+    NSArray *immutableNewList = [self.dishes copy];
+    // upload this immutable array in the database (and replace the existing one)
+    [dishesDB setObject:immutableNewList forKey:@"dishes"];
+    [dishesDB synchronize];
+    // reload view
+    [self.dishListTableView reloadData];
+}
 
 
 /*
