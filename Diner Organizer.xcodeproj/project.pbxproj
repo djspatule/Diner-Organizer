@@ -15,9 +15,10 @@
 		B6340FD519EA9F5A0081E8B2 /* date.png in Resources */ = {isa = PBXBuildFile; fileRef = B6340FD219EA9F5A0081E8B2 /* date.png */; };
 		B6340FD619EA9F5A0081E8B2 /* dish.png in Resources */ = {isa = PBXBuildFile; fileRef = B6340FD319EA9F5A0081E8B2 /* dish.png */; };
 		B6340FD719EA9F5A0081E8B2 /* guest.png in Resources */ = {isa = PBXBuildFile; fileRef = B6340FD419EA9F5A0081E8B2 /* guest.png */; };
-		B6340FE219EAD3920081E8B2 /* Diner.m in Sources */ = {isa = PBXBuildFile; fileRef = B6340FE119EAD3920081E8B2 /* Diner.m */; };
+		B6719E261A2510D3006AF703 /* Dinner.m in Sources */ = {isa = PBXBuildFile; fileRef = B6719E251A2510D3006AF703 /* Dinner.m */; };
+		B6719E291A2510D3006AF703 /* Guest.m in Sources */ = {isa = PBXBuildFile; fileRef = B6719E281A2510D3006AF703 /* Guest.m */; };
+		B6719E2C1A2510D3006AF703 /* Dish.m in Sources */ = {isa = PBXBuildFile; fileRef = B6719E2B1A2510D3006AF703 /* Dish.m */; };
 		B6D1A4D819FD1DA700CAA93E /* DishListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1A4D719FD1DA700CAA93E /* DishListTableViewController.m */; };
-		B6D1A4DB19FD33A000CAA93E /* Dish.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1A4DA19FD33A000CAA93E /* Dish.m */; };
 		B6D1A4DD19FD3C8C00CAA93E /* pizza.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6D1A4DC19FD3C8C00CAA93E /* pizza.jpg */; };
 		B6D1A4DF19FD3CC000CAA93E /* tiramisu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6D1A4DE19FD3CC000CAA93E /* tiramisu.jpg */; };
 		B6D1A4E219FD418600CAA93E /* NewDishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D1A4E119FD418600CAA93E /* NewDishViewController.m */; };
@@ -54,12 +55,14 @@
 		B6340FD219EA9F5A0081E8B2 /* date.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = date.png; sourceTree = "<group>"; };
 		B6340FD319EA9F5A0081E8B2 /* dish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dish.png; sourceTree = "<group>"; };
 		B6340FD419EA9F5A0081E8B2 /* guest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guest.png; sourceTree = "<group>"; };
-		B6340FE019EAD3920081E8B2 /* Diner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Diner.h; sourceTree = "<group>"; };
-		B6340FE119EAD3920081E8B2 /* Diner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Diner.m; sourceTree = "<group>"; };
+		B6719E241A2510D3006AF703 /* Dinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dinner.h; path = ../Dinner.h; sourceTree = "<group>"; };
+		B6719E251A2510D3006AF703 /* Dinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dinner.m; path = ../Dinner.m; sourceTree = "<group>"; };
+		B6719E271A2510D3006AF703 /* Guest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Guest.h; path = ../Guest.h; sourceTree = "<group>"; };
+		B6719E281A2510D3006AF703 /* Guest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Guest.m; path = ../Guest.m; sourceTree = "<group>"; };
+		B6719E2A1A2510D3006AF703 /* Dish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dish.h; path = ../Dish.h; sourceTree = "<group>"; };
+		B6719E2B1A2510D3006AF703 /* Dish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dish.m; path = ../Dish.m; sourceTree = "<group>"; };
 		B6D1A4D619FD1DA700CAA93E /* DishListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DishListTableViewController.h; sourceTree = "<group>"; };
 		B6D1A4D719FD1DA700CAA93E /* DishListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DishListTableViewController.m; sourceTree = "<group>"; };
-		B6D1A4D919FD33A000CAA93E /* Dish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dish.h; sourceTree = "<group>"; };
-		B6D1A4DA19FD33A000CAA93E /* Dish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dish.m; sourceTree = "<group>"; };
 		B6D1A4DC19FD3C8C00CAA93E /* pizza.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizza.jpg; sourceTree = "<group>"; };
 		B6D1A4DE19FD3CC000CAA93E /* tiramisu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tiramisu.jpg; sourceTree = "<group>"; };
 		B6D1A4E019FD418600CAA93E /* NewDishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDishViewController.h; sourceTree = "<group>"; };
@@ -181,10 +184,12 @@
 		B6340FDF19EAD36C0081E8B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B6340FE019EAD3920081E8B2 /* Diner.h */,
-				B6340FE119EAD3920081E8B2 /* Diner.m */,
-				B6D1A4D919FD33A000CAA93E /* Dish.h */,
-				B6D1A4DA19FD33A000CAA93E /* Dish.m */,
+				B6719E2A1A2510D3006AF703 /* Dish.h */,
+				B6719E2B1A2510D3006AF703 /* Dish.m */,
+				B6719E271A2510D3006AF703 /* Guest.h */,
+				B6719E281A2510D3006AF703 /* Guest.m */,
+				B6719E241A2510D3006AF703 /* Dinner.h */,
+				B6719E251A2510D3006AF703 /* Dinner.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -343,12 +348,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6340FE219EAD3920081E8B2 /* Diner.m in Sources */,
 				B6D1A4E219FD418600CAA93E /* NewDishViewController.m in Sources */,
+				B6719E2C1A2510D3006AF703 /* Dish.m in Sources */,
 				B6D1A4E619FD473000CAA93E /* dishViewViewController.m in Sources */,
-				B6D1A4DB19FD33A000CAA93E /* Dish.m in Sources */,
+				B6719E291A2510D3006AF703 /* Guest.m in Sources */,
 				B6D1A4D819FD1DA700CAA93E /* DishListTableViewController.m in Sources */,
 				B6D1A4EE19FEE6F100CAA93E /* Diner Organizer.xcdatamodeld in Sources */,
+				B6719E261A2510D3006AF703 /* Dinner.m in Sources */,
 				B6340F7419E86B280081E8B2 /* AppDelegate.m in Sources */,
 				B6340F7119E86B280081E8B2 /* main.m in Sources */,
 			);

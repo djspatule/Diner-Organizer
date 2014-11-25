@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B23" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -109,7 +109,9 @@
                             <constraint firstItem="bSF-Yw-AoT" firstAttribute="trailing" secondItem="mL9-2J-ALa" secondAttribute="trailingMargin" id="5Sr-kP-gEv"/>
                             <constraint firstItem="bwF-SH-XuP" firstAttribute="leading" secondItem="mL9-2J-ALa" secondAttribute="leadingMargin" id="7Ra-Zw-c3X"/>
                             <constraint firstItem="st1-PU-c8Z" firstAttribute="trailing" secondItem="mL9-2J-ALa" secondAttribute="trailingMargin" id="7eW-C9-91l"/>
-                            <constraint firstItem="bwF-SH-XuP" firstAttribute="top" secondItem="uhc-pp-IUC" secondAttribute="bottom" constant="8" id="A35-MP-cq2"/>
+                            <constraint firstItem="bwF-SH-XuP" firstAttribute="top" secondItem="uhc-pp-IUC" secondAttribute="bottom" constant="8" id="A35-MP-cq2">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="bSF-Yw-AoT" firstAttribute="leading" secondItem="mL9-2J-ALa" secondAttribute="leadingMargin" id="Ay2-Pn-svN"/>
                             <constraint firstItem="zOO-Co-zDA" firstAttribute="top" secondItem="st1-PU-c8Z" secondAttribute="bottom" constant="8" id="L2S-xA-1VO"/>
                             <constraint firstItem="zOO-Co-zDA" firstAttribute="trailing" secondItem="mL9-2J-ALa" secondAttribute="trailingMargin" id="Qzt-qe-XmA"/>
@@ -240,7 +242,9 @@
                             <constraint firstItem="krB-Sv-bND" firstAttribute="top" secondItem="cct-fN-3nV" secondAttribute="bottom" constant="8" symbolic="YES" id="VTn-Id-iTB"/>
                             <constraint firstItem="krB-Sv-bND" firstAttribute="leading" secondItem="10i-Mz-iqU" secondAttribute="leadingMargin" id="dU9-7B-Skb"/>
                             <constraint firstItem="cct-fN-3nV" firstAttribute="trailing" secondItem="10i-Mz-iqU" secondAttribute="trailingMargin" id="jp7-1C-mNL"/>
-                            <constraint firstItem="cct-fN-3nV" firstAttribute="top" secondItem="rPq-y1-z4l" secondAttribute="bottom" constant="8" id="zUy-fA-ATK"/>
+                            <constraint firstItem="cct-fN-3nV" firstAttribute="top" secondItem="rPq-y1-z4l" secondAttribute="bottom" constant="8" id="zUy-fA-ATK">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -249,15 +253,15 @@
                                 <exclude reference="krB-Sv-bND"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="V4W-iu-ZvW"/>
-                                <exclude reference="jp7-1C-mNL"/>
-                                <exclude reference="zUy-fA-ATK"/>
-                                <exclude reference="1UI-fr-SpS"/>
-                                <exclude reference="VTn-Id-iTB"/>
-                                <exclude reference="dU9-7B-Skb"/>
                                 <exclude reference="BW3-qY-wKd"/>
                                 <exclude reference="F7p-Pa-iGQ"/>
                                 <exclude reference="Mpc-pN-ouQ"/>
+                                <exclude reference="1UI-fr-SpS"/>
+                                <exclude reference="VTn-Id-iTB"/>
+                                <exclude reference="dU9-7B-Skb"/>
+                                <exclude reference="V4W-iu-ZvW"/>
+                                <exclude reference="jp7-1C-mNL"/>
+                                <exclude reference="zUy-fA-ATK"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -267,15 +271,15 @@
                                 <include reference="krB-Sv-bND"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="V4W-iu-ZvW"/>
-                                <include reference="jp7-1C-mNL"/>
-                                <include reference="zUy-fA-ATK"/>
-                                <include reference="1UI-fr-SpS"/>
-                                <include reference="VTn-Id-iTB"/>
-                                <include reference="dU9-7B-Skb"/>
                                 <include reference="BW3-qY-wKd"/>
                                 <include reference="F7p-Pa-iGQ"/>
                                 <include reference="Mpc-pN-ouQ"/>
+                                <include reference="1UI-fr-SpS"/>
+                                <include reference="VTn-Id-iTB"/>
+                                <include reference="dU9-7B-Skb"/>
+                                <include reference="V4W-iu-ZvW"/>
+                                <include reference="jp7-1C-mNL"/>
+                                <include reference="zUy-fA-ATK"/>
                             </mask>
                         </variation>
                     </view>

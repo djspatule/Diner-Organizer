@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A388b" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Dish" syncable="YES">
-        <attribute name="dishName" optional="YES" attributeType="String" syncable="YES"/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14B25" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Dinner" representedClassName="Dinner" syncable="YES">
+        <attribute name="dinnerDate" attributeType="Date" syncable="YES"/>
+        <attribute name="dinnerTitle" attributeType="String" syncable="YES"/>
+        <relationship name="dinnerToDish" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dish" inverseName="dishToDinner" inverseEntity="Dish" syncable="YES"/>
+        <relationship name="dinnerToGuest" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Guest" inverseName="guestToDinner" inverseEntity="Guest" syncable="YES"/>
+    </entity>
+    <entity name="Dish" representedClassName="Dish" syncable="YES">
+        <attribute name="dishImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="dishName" attributeType="String" syncable="YES"/>
         <attribute name="dishRecipe" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="dishToDinner" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Dinner" inverseName="dinnerToDish" inverseEntity="Dinner" syncable="YES"/>
+    </entity>
+    <entity name="Guest" representedClassName="Guest" syncable="YES">
+        <attribute name="guestDislikes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guestFirst" attributeType="String" syncable="YES"/>
+        <attribute name="guestImage" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="guestLast" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="guestLikes" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="guestToDinner" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Dinner" inverseName="dinnerToGuest" inverseEntity="Dinner" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Dish" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Dish" positionX="-191" positionY="180" width="128" height="103"/>
+        <element name="Dinner" positionX="-27" positionY="63" width="128" height="103"/>
+        <element name="Guest" positionX="144" positionY="153" width="128" height="133"/>
     </elements>
 </model>
