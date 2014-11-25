@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DishListTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Fetch Main Storyboard
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    
+    // Instantiate Root Navigation Controller
+    UINavigationController *dishRootNavigationController = (UINavigationController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"dishRootNavigationController"];
+    
+    // Configure View Controller
+    dishListTableViewController *tableViewController = (dishListTableViewController *)[dishRootNavigationController topViewController];
+    
+    if ([tableViewController isKindOfClass:[dishListTableViewController class]]) {
+        [tableViewController setManagedObjectContext:self.managedObjectContext];
+    }
+    
+    // Configure Window
+    [self.window setRootViewController:dishRootNavigationController];
+    
     // Override point for customization after application launch.
     return YES;
 }

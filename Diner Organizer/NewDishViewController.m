@@ -34,7 +34,8 @@
 }
 */
 
-//Image Picker Implementation
+#pragma mark - Image Picker Implementation
+
 - (IBAction)chooseDishImage:(UIButton *)sender
 {
     //initialize an image picker
@@ -63,27 +64,56 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - Actions
 
 - (IBAction)saveDish:(UIBarButtonItem *)sender
 {
-    // create an instance of the NSUserdefaults
-    NSUserDefaults *dishesDB = [NSUserDefaults standardUserDefaults];
+    // Helpers
+    NSString *dishName = self.dishNameTextField.text;
+    NSString *dishRecipe = self.dishRecipeTextField.text;
+    NSData *dishImage = UIImagePNGRepresentation(self.chosenDishImage);
+    
+    if (dishName && dishName.length) {
+        // Create Entity
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Dish" inManagedObjectContext:self.managedObjectContext];
+        
+        // Initialize Record
+        NSManagedObject *record = [[NSManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];
+        
+        // Populate Record
+        [record setValue:dishName forKey:@"dishName"];
+        [record setValue:dishRecipe forKey:@"dishRecipe"];
+        [record setValue:dishImage forKey:@"dishImage"];
 
-    // create a Dish dictionnary object and fill it with screen content
-    NSDictionary *newDish = @{@"dishName" : self.dishNameTextField.text, @"dishRecipe" : self.dishRecipeTextField.text, @"dishImage" : UIImagePNGRepresentation(self.chosenDishImage)};
-    
-    // save dish in userDefaults dishesDB dictionnary by first loading the DB in memory, completing it before uploading it again.
-    NSMutableArray *newList = [[NSMutableArray alloc] init];
-    for (int i = 0; i < ((int)[[dishesDB objectForKey:@"dishes"] count]); i++)
-    {
-        [newList addObject:[[dishesDB objectForKey:@"dishes"] objectAtIndex:i]];
+        
+        // Save Record
+        NSError *error = nil;
+        
+        if ([self.managedObjectContext save:&error])
+        {
+            // Dismiss View Controller
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+        else
+        {
+            if (error)
+            {
+                NSLog(@"Unable to save record.");
+                NSLog(@"%@, %@", error, error.localizedDescription);
+            }
+            // Show Alert View
+            [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your dish could not be saved." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+        
     }
-    [newList addObject:newDish];
-    NSArray *immutableNewList = [newList copy];
-    [dishesDB setObject:immutableNewList forKey:@"dishes"];
-    [dishesDB synchronize];
-    NSLog(@"the DB contains %lu elements whose last is %@", (unsigned long)[[dishesDB objectForKey:@"dishes"] count], [[dishesDB objectForKey:@"dishes"] lastObject]);
-    
+    else
+    {
+        // Show Alert View
+        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your dish needs a name." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+
+    //[self.navigationController popViewControllerAnimated:YES];
+    //testing another way to dismiss the view on completion :
     [self.navigationController popViewControllerAnimated:YES];
 }
 

@@ -191,6 +191,136 @@
             </objects>
             <point key="canvasLocation" x="2365.5" y="-1002"/>
         </scene>
+        <!--editDish-->
+        <scene sceneID="vCi-3y-XJh">
+            <objects>
+                <viewController title="editDish" id="bLf-jC-gP2" customClass="editDishViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pud-I4-g6q"/>
+                        <viewControllerLayoutGuide type="bottom" id="QXe-pn-UA2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KgG-xH-3ue">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type the dish's name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJS-q3-xPd">
+                                <rect key="frame" x="115" y="290" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dishNameTyped:" destination="n42-F3-VaO" eventType="editingDidEndOnExit" id="EbO-N1-LmZ"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HdN-I1-0AN">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dishNameTyped:" destination="n42-F3-VaO" eventType="editingDidEndOnExit" id="tIp-FU-ALb"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGK-qx-eF6">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Choose Image">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseDishImage:" destination="n42-F3-VaO" eventType="touchUpInside" id="KTY-Nl-nV5"/>
+                                    <action selector="chooseImageButtonPressed:" destination="bLf-jC-gP2" eventType="touchUpInside" id="e43-T6-LkR"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zo1-HD-ziR">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="176" id="7Qb-LQ-Vkn"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7Qb-LQ-Vkn"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="7Qb-LQ-Vkn"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EJS-q3-xPd" firstAttribute="top" secondItem="Pud-I4-g6q" secondAttribute="bottom" constant="41" id="2cO-6A-5Ce">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="HdN-I1-0AN" firstAttribute="leading" secondItem="KgG-xH-3ue" secondAttribute="leadingMargin" id="5fX-2b-5pK"/>
+                            <constraint firstItem="xGK-qx-eF6" firstAttribute="top" secondItem="HdN-I1-0AN" secondAttribute="bottom" constant="8" id="7EJ-mv-lyJ"/>
+                            <constraint firstItem="EJS-q3-xPd" firstAttribute="trailing" secondItem="KgG-xH-3ue" secondAttribute="trailingMargin" id="URo-cM-rlP"/>
+                            <constraint firstItem="zo1-HD-ziR" firstAttribute="trailing" secondItem="KgG-xH-3ue" secondAttribute="trailingMargin" id="UpI-zd-zfb"/>
+                            <constraint firstItem="zo1-HD-ziR" firstAttribute="leading" secondItem="KgG-xH-3ue" secondAttribute="leadingMargin" id="hpk-oY-NGm"/>
+                            <constraint firstItem="HdN-I1-0AN" firstAttribute="top" secondItem="EJS-q3-xPd" secondAttribute="bottom" constant="8" id="lG2-fI-Q5N"/>
+                            <constraint firstItem="EJS-q3-xPd" firstAttribute="leading" secondItem="KgG-xH-3ue" secondAttribute="leadingMargin" id="mjR-xw-Puu"/>
+                            <constraint firstItem="xGK-qx-eF6" firstAttribute="trailing" secondItem="KgG-xH-3ue" secondAttribute="trailingMargin" id="q7n-42-I5v"/>
+                            <constraint firstItem="HdN-I1-0AN" firstAttribute="trailing" secondItem="KgG-xH-3ue" secondAttribute="trailingMargin" id="qMR-vh-nOd"/>
+                            <constraint firstItem="zo1-HD-ziR" firstAttribute="top" secondItem="xGK-qx-eF6" secondAttribute="bottom" constant="8" id="xUJ-SE-8qf"/>
+                            <constraint firstItem="xGK-qx-eF6" firstAttribute="leading" secondItem="KgG-xH-3ue" secondAttribute="leadingMargin" id="zvb-A8-Sz5"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="EJS-q3-xPd"/>
+                                <exclude reference="HdN-I1-0AN"/>
+                                <exclude reference="xGK-qx-eF6"/>
+                                <exclude reference="zo1-HD-ziR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2cO-6A-5Ce"/>
+                                <exclude reference="URo-cM-rlP"/>
+                                <exclude reference="mjR-xw-Puu"/>
+                                <exclude reference="5fX-2b-5pK"/>
+                                <exclude reference="lG2-fI-Q5N"/>
+                                <exclude reference="qMR-vh-nOd"/>
+                                <exclude reference="7EJ-mv-lyJ"/>
+                                <exclude reference="q7n-42-I5v"/>
+                                <exclude reference="zvb-A8-Sz5"/>
+                                <exclude reference="UpI-zd-zfb"/>
+                                <exclude reference="hpk-oY-NGm"/>
+                                <exclude reference="xUJ-SE-8qf"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="EJS-q3-xPd"/>
+                                <include reference="HdN-I1-0AN"/>
+                                <include reference="xGK-qx-eF6"/>
+                                <include reference="zo1-HD-ziR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2cO-6A-5Ce"/>
+                                <include reference="URo-cM-rlP"/>
+                                <include reference="mjR-xw-Puu"/>
+                                <include reference="5fX-2b-5pK"/>
+                                <include reference="lG2-fI-Q5N"/>
+                                <include reference="qMR-vh-nOd"/>
+                                <include reference="7EJ-mv-lyJ"/>
+                                <include reference="q7n-42-I5v"/>
+                                <include reference="zvb-A8-Sz5"/>
+                                <include reference="UpI-zd-zfb"/>
+                                <include reference="hpk-oY-NGm"/>
+                                <include reference="xUJ-SE-8qf"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Edit" id="YlT-TS-MYi"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="DishImageView" destination="zo1-HD-ziR" id="zvQ-hA-O7l"/>
+                        <outlet property="chooseImageButtonPressed" destination="xGK-qx-eF6" id="qxE-cu-kXB"/>
+                        <outlet property="dishNameTextField" destination="EJS-q3-xPd" id="nhR-la-pLh"/>
+                        <outlet property="dishRecipeTextField" destination="HdN-I1-0AN" id="S0Z-DR-EAB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="32Q-N4-Bmu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4044" y="-306"/>
+        </scene>
         <!--dishView-->
         <scene sceneID="deW-yy-sR5">
             <objects>
@@ -284,7 +414,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="TP0-Hg-hCE">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Ki1-hc-9Lh"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Ki1-hc-9Lh">
+                            <connections>
+                                <segue destination="HvU-4l-uDA" kind="show" id="Wfg-h5-mEQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dishImageImageView" destination="cct-fN-3nV" id="N8U-63-eYx"/>
@@ -336,7 +470,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="rootTabBarController" id="49e-Tb-3d3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -375,7 +509,7 @@
         <!--Dishes-->
         <scene sceneID="vKd-JV-Q8Y">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6GO-4h-SSJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="dishRootNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="6GO-4h-SSJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Dishes" image="dish.png" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Og7-u9-ced">
@@ -390,6 +524,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ldx-4o-MS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="916" y="-355"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FSX-Om-5lb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HvU-4l-uDA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0JF-sl-xVI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bLf-jC-gP2" kind="relationship" relationship="rootViewController" id="L9e-sT-hxM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1LX-Pe-uz3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3126" y="-306"/>
         </scene>
     </scenes>
     <resources>
