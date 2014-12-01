@@ -10,11 +10,10 @@
 #import "dishViewViewController.h"
 #import "NewDishViewController.h"
 
-
 @interface dishListTableViewController () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
-
+@property (nonatomic, strong) NSIndexPath *pathToSelected;
 @end
 
 @implementation dishListTableViewController
@@ -22,7 +21,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@", self.managedObjectContext);
+    
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)])
+        self.managedObjectContext = [delegate managedObjectContext];
     
     // Initialize Fetch Request
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Dish"];
@@ -185,20 +187,25 @@
 - (void)prepareForSegue:(UIStoryboardSegue*)segue sender:(id)sender
 
 {
-//    if ([sender isKindOfClass:[dishListTableViewController class]])
-//    {
-        if ([segue.destinationViewController isKindOfClass:[dishViewViewController class]])
-        {
-            //create a view controller object and make it the current segue's destination.
-            dishViewViewController *nextViewController = [segue destinationViewController];
-            //create a path object in which we store the path for the UITableViewCell that started the segue.
-            NSIndexPath *path = [self.tableView indexPathForCell:sender];
-            // transfer to the next view controller the path (or address) of the cell that was clicked on.
-            nextViewController.dishIndexNumber = path.row;
-            [nextViewController setManagedObjectContext:self.managedObjectContext];
-
+    if ([segue.destinationViewController isKindOfClass:[dishViewViewController class]])
+    {
+        //create a view controller object and make it the current segue's destination.
+        dishViewViewController *nextViewController = [segue destinationViewController];
+        //create a path object in which we store the path for the UITableViewCell that started the segue.
+        self.pathToSelected = [self.tableView indexPathForCell:sender];
+        // Send the Managed Object Context.
+        [nextViewController setManagedObjectContext:self.managedObjectContext];
+        if (self.pathToSelected) {
+            // Fetch Record
+            NSManagedObject *record = [self.fetchedResultsController objectAtIndexPath:self.pathToSelected];
+            
+            if (record) {
+                nextViewController.record = record;
+            }
         }
-//    }
+
+
+    }
     if ([segue.destinationViewController isKindOfClass:[NewDishViewController class]])
     {
         // Obtain Reference to View Controller

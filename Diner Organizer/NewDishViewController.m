@@ -36,19 +36,7 @@
 
 #pragma mark - Image Picker Implementation
 
-- (IBAction)chooseDishImage:(UIButton *)sender
-{
-    //initialize an image picker
-    self.DishImagePicker = [[UIImagePickerController alloc] init];
-    // set the delegate
-    self.DishImagePicker.delegate = self;
-    // set its sourceType property to configure the picker for browsing saved media as opposed to capturing a new picture or movie
-    [self.DishImagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    //show the image picker now that everything is set up
-    [self presentViewController:self.DishImagePicker animated:YES completion:nil];
-}
-
-//show and image once chosen (and prepare to asve it in saveDish method)
+//show and image once chosen (and prepare to save it in saveDish method)
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     // remember chosen image from picker in the corresponding controller's property
@@ -104,7 +92,6 @@
             // Show Alert View
             [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your dish could not be saved." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
-        
     }
     else
     {
@@ -112,9 +99,19 @@
         [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Your dish needs a name." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
 
-    //[self.navigationController popViewControllerAnimated:YES];
-    //testing another way to dismiss the view on completion :
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)chooseDishImage:(UIButton *)sender
+{
+    //initialize an image picker
+    self.DishImagePicker = [[UIImagePickerController alloc] init];
+    // set the delegate
+    self.DishImagePicker.delegate = self;
+    // set its sourceType property to configure the picker for browsing saved media as opposed to capturing a new picture or movie
+    [self.DishImagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    //show the image picker now that everything is set up
+    [self presentViewController:self.DishImagePicker animated:YES completion:nil];
 }
 
 - (IBAction)dishNameTyped:(id)sender

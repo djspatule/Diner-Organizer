@@ -90,7 +90,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="chooseDishImage:" destination="n42-F3-VaO" eventType="touchUpInside" id="WaM-UP-mOD"/>
+                                    <action selector="chooseDishImage:" destination="n42-F3-VaO" eventType="touchUpInside" id="cZH-JG-osP"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Recipe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zOO-Co-zDA">
@@ -200,9 +200,10 @@
                         <viewControllerLayoutGuide type="bottom" id="QXe-pn-UA2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KgG-xH-3ue">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type the dish's name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJS-q3-xPd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type the dish's name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EJS-q3-xPd">
                                 <rect key="frame" x="115" y="290" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -224,7 +225,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="chooseDishImage:" destination="n42-F3-VaO" eventType="touchUpInside" id="KTY-Nl-nV5"/>
                                     <action selector="chooseImageButtonPressed:" destination="bLf-jC-gP2" eventType="touchUpInside" id="e43-T6-LkR"/>
                                 </connections>
                             </button>
@@ -270,9 +270,6 @@
                                 <exclude reference="zo1-HD-ziR"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="2cO-6A-5Ce"/>
-                                <exclude reference="URo-cM-rlP"/>
-                                <exclude reference="mjR-xw-Puu"/>
                                 <exclude reference="5fX-2b-5pK"/>
                                 <exclude reference="lG2-fI-Q5N"/>
                                 <exclude reference="qMR-vh-nOd"/>
@@ -282,6 +279,9 @@
                                 <exclude reference="UpI-zd-zfb"/>
                                 <exclude reference="hpk-oY-NGm"/>
                                 <exclude reference="xUJ-SE-8qf"/>
+                                <exclude reference="2cO-6A-5Ce"/>
+                                <exclude reference="URo-cM-rlP"/>
+                                <exclude reference="mjR-xw-Puu"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -292,9 +292,6 @@
                                 <include reference="zo1-HD-ziR"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="2cO-6A-5Ce"/>
-                                <include reference="URo-cM-rlP"/>
-                                <include reference="mjR-xw-Puu"/>
                                 <include reference="5fX-2b-5pK"/>
                                 <include reference="lG2-fI-Q5N"/>
                                 <include reference="qMR-vh-nOd"/>
@@ -304,22 +301,30 @@
                                 <include reference="UpI-zd-zfb"/>
                                 <include reference="hpk-oY-NGm"/>
                                 <include reference="xUJ-SE-8qf"/>
+                                <include reference="2cO-6A-5Ce"/>
+                                <include reference="URo-cM-rlP"/>
+                                <include reference="mjR-xw-Puu"/>
                             </mask>
                         </variation>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Edit" id="YlT-TS-MYi"/>
+                    <navigationItem key="navigationItem" title="Edit" id="YlT-TS-MYi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="aw1-Ie-NL3">
+                            <connections>
+                                <action selector="saveEditedDishButtonPressed:" destination="bLf-jC-gP2" id="Au0-zh-p7m"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="DishImageView" destination="zo1-HD-ziR" id="zvQ-hA-O7l"/>
-                        <outlet property="chooseImageButtonPressed" destination="xGK-qx-eF6" id="qxE-cu-kXB"/>
                         <outlet property="dishNameTextField" destination="EJS-q3-xPd" id="nhR-la-pLh"/>
                         <outlet property="dishRecipeTextField" destination="HdN-I1-0AN" id="S0Z-DR-EAB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32Q-N4-Bmu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4044" y="-306"/>
+            <point key="canvasLocation" x="3141" y="-306"/>
         </scene>
         <!--dishView-->
         <scene sceneID="deW-yy-sR5">
@@ -416,7 +421,7 @@
                     <navigationItem key="navigationItem" title="Details" id="TP0-Hg-hCE">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Ki1-hc-9Lh">
                             <connections>
-                                <segue destination="HvU-4l-uDA" kind="show" id="Wfg-h5-mEQ"/>
+                                <segue destination="bLf-jC-gP2" kind="show" id="vxH-92-A6L"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -524,24 +529,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ldx-4o-MS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="916" y="-355"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="FSX-Om-5lb">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HvU-4l-uDA" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0JF-sl-xVI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bLf-jC-gP2" kind="relationship" relationship="rootViewController" id="L9e-sT-hxM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1LX-Pe-uz3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3126" y="-306"/>
         </scene>
     </scenes>
     <resources>

@@ -18,10 +18,11 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *dishNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *dishRecipeTextField;
-@property (weak, nonatomic) IBOutlet UIImageView *DishImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *dishImageView;
 @property (strong, nonatomic) UIImage *editedDishImage;
 @property (strong, nonatomic) UIImagePickerController * DishImagePicker;
 
 - (IBAction)chooseImageButtonPressed:(UIButton *)sender;
+- (IBAction)saveEditedDishButtonPressed:(UIBarButtonItem *)sender;
 
 @end

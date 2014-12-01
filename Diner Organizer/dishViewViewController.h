@@ -10,10 +10,12 @@
 #import <CoreData/CoreData.h>
 
 @interface dishViewViewController : UIViewController
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) NSManagedObject *record;
+
 @property (weak, nonatomic) IBOutlet UILabel *dishNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *recipeContentLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *dishImageImageView;
-@property (nonatomic) NSInteger dishIndexNumber;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

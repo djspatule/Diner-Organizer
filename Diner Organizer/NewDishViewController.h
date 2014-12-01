@@ -22,6 +22,6 @@
 
 
 - (IBAction)saveDish:(UIBarButtonItem *)sender;
-
+- (IBAction)chooseDishImage:(UIButton *)sender;
 
 @end
